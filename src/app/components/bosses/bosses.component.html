@@ -1,0 +1,10 @@
+<h1>Bosses <small>Hollow Kight</small></h1>
+<hr>
+
+
+<div class="card-columns">
+
+    <!-- *ngFor="let boss of bosss; let i = index"> -->
+    <app-bosses-view [boss]="bossObj" [index]="indexObj" *ngFor="let bossObj of bosses; let indexObj = index"></app-bosses-view>
+
+</div>

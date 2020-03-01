@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="btn-group btn-block" role="group" aria-label="Basic example" style="padding: 10px;">
+        <button (click)="morphNumber = 1" type="button" class="btn btn-secondary">H's.J.</button>
+        <div *ngIf="boss.idleName!=''"><button (click)="morphNumber = 2" type="button" class="btn btn-secondary">{{boss.idleName}}</button></div>
+        <div *ngIf="boss.thirdStageName!=''"><button (click)="morphNumber = 3" type="button" class="btn btn-secondary">{{boss.thirdStageName}}</button></div>
+        <div *ngIf="boss.fourthStageName != ''"><button (click)="morphNumber = 4" type="button" class="btn btn-secondary">{{boss.fourthStageName}}</button></div>
+    </div>
+
+    <div *ngIf="morphNumber==1"><img [src]="boss.hunterJournal" class="card-img-top" [alt]="boss.name"></div>
+    <div *ngIf="morphNumber==2"><img [src]="boss.idleImg" class="card-img-top" [alt]="boss.name"></div>
+    <div *ngIf="morphNumber==3"><img [src]="boss.thirdStageImg" class="card-img-top" [alt]="boss.name"></div>
+    <div *ngIf="morphNumber==4"><img [src]="boss.fourthStageImg" class="card-img-top" [alt]="boss.name"></div>
+
+    <div class="card-body">
+        <h5 class="card-title">{{boss.name}}</h5>
+        <p class="card-text">{{boss.descShort}}</p>
+        <p class="card-text"><small class="text-muted">Health: ({{boss.health}})</small></p>
+
+        <button (click)="viewBoss()" type="button" class="btn btn-outline-primary btn-block">
+        [ + ]
+    </button>
+    </div>

@@ -1,0 +1,33 @@
+<h1>{{boss.name | uppercase }} <small>health: ({{boss.health}})</small> </h1>
+<hr>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="btn-group btn-block" role="group" aria-label="Basic example" style="padding: 10px;">
+            <button (click)="morphNumber = 1" type="button" class="btn btn-secondary">H's.J.</button>
+            <div *ngIf="boss.idleName!=''"><button (click)="morphNumber = 2" type="button" class="btn btn-secondary">{{boss.idleName}}</button></div>
+            <div *ngIf="boss.thirdStageName!=''"><button (click)="morphNumber = 3" type="button" class="btn btn-secondary">{{boss.thirdStageName}}</button></div>
+            <div *ngIf="boss.fourthStageName != ''"><button (click)="morphNumber = 4" type="button" class="btn btn-secondary">{{boss.fourthStageName}}</button></div>
+        </div>
+
+        <div *ngIf="morphNumber==1"><img [src]="boss.hunterJournal" class="card-img-top" [alt]="boss.name"></div>
+        <div *ngIf="morphNumber==2"><img [src]="boss.idleImg" class="card-img-top" [alt]="boss.name"></div>
+        <div *ngIf="morphNumber==3"><img [src]="boss.thirdStageImg" class="card-img-top" [alt]="boss.name"></div>
+        <div *ngIf="morphNumber==4"><img [src]="boss.fourthStageImg" class="card-img-top" [alt]="boss.name"></div>
+        <br><br>
+
+        <a #back [routerLink]="['/bosses']" class="btn btn-outline-danger btn-block"> Back</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3>{{boss.name}} </h3>
+        <hr>
+        <p>
+            {{boss.descShort}}
+        </p>
+        <hr>
+        <p>
+            {{boss.descLong}}
+        </p>
+    </div>
+</div>
