@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hunter-fa7a4": {
+      "hosting": {
+        "hunter": [
+          "hunter-fa7a4"
+        ]
+      }
+    }
+  }
+}
